@@ -84,4 +84,10 @@ class CarListTest {
         Car carFromList = carList.get(100);
         assertEquals("BMW", carFromList.getBrand());
     }
+
+    @Test
+    public void testContains(){
+        assertTrue(carList.contains(new Car("Brand5", 5)));
+        assertFalse(carList.contains(new Car("BMW", 5)));
+    }
 }
