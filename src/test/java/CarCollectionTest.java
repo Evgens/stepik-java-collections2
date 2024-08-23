@@ -9,9 +9,9 @@ class CarCollectionTest {
 
     @BeforeEach
     void setUp() {
-        carCollection = new CarArrayList();
+//        carCollection = new CarArrayList();
 //        carCollection = new CarLinkedList();
-//        carCollection = new CarHashSet();
+        carCollection = new CarHashSet();
         for (int i = 0; i < 100; i++) {
             carCollection.add(new Car("Brand" + i, i));
         }
@@ -21,5 +21,14 @@ class CarCollectionTest {
     void contains() {
         assertTrue(carCollection.contains(new Car("Brand5", 5)));
         assertFalse(carCollection.contains(new Car("BMW", 5)));
+    }
+
+    @Test
+    public void testForEach(){
+        int index = 0;
+        for (Car car : carCollection){
+            index++;
+        }
+        assertEquals(100, index);
     }
 }

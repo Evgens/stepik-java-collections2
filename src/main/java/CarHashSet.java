@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 public class CarHashSet implements CarSet {
 
     private static final int INITIAL_CAPACITY = 16;
@@ -117,5 +119,38 @@ public class CarHashSet implements CarSet {
             this.value = car;
             this.next = next;
         }
+    }
+
+    @Override
+    public Iterator<Car> iterator() {
+        return new Iterator<Car>() {
+
+            int index = 0;
+            int count = 0;
+            Entry entryNext;
+
+            @Override
+            public boolean hasNext() {
+                return count < size;
+            }
+
+            @Override
+            public Car next() {
+                Car car;
+                while (array[index] == null) {
+                    index++;
+                }
+
+                if (entryNext == null) {
+                    entryNext = array[index];
+                }
+                car = entryNext.value;
+                count++;
+                entryNext = entryNext.next;
+                if (entryNext==null) index++;
+
+                return car;
+            }
+        };
     }
 }
