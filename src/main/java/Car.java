@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Car {
+public class Car { //implements Comparable<Car> {
     String brand;
     int number;
 
@@ -28,5 +28,18 @@ public class Car {
     @Override
     public int hashCode() {
         return Objects.hash(brand, number);
+    }
+
+//    @Override
+//    public int compareTo(Car o) {
+//        return brand.compareTo(o.brand);
+//    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", number=" + number +
+                '}';
     }
 }
