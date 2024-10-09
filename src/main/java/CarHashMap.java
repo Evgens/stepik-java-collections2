@@ -120,7 +120,7 @@ public class CarHashMap implements CarMap {
 
     private void increaseArray() {
         Entry[] newArray = new Entry[array.length * 2];
-        Set<CarOwner> result = new HashSet<>();
+//        Set<CarOwner> result = new HashSet<>();
         for (Entry entry : array) {
             Entry existedElement = entry;
             while (existedElement != null) {
