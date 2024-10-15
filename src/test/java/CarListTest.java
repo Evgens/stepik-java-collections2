@@ -4,12 +4,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CarListTest {
 //    private CarList carList;
-    private CarList carList;
+    private CarList<Car> carList;
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
-//        carList = new CarArrayList();
-        carList = new CarLinkedList();
+        carList = new CarArrayList<>();
+//        carList = new CarLinkedList<>();
         for (int i = 0; i < 100; i++) {
             carList.add(new Car("Brand" + i, i));
         }

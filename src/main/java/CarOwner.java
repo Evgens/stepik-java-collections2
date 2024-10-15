@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-public class CarOwner implements CarMap {
+public class CarOwner { //implements CarMap {
     private int id;
     private String name;
     private String lastName;
@@ -37,35 +37,7 @@ public class CarOwner implements CarMap {
         this.lastName = lastName;
     }
 
-    @Override
-    public void put(CarOwner key, Car value) {
 
-    }
-
-    @Override
-    public Car get(CarOwner key) {
-        return null;
-    }
-
-    @Override
-    public Set<CarOwner> keySet() {
-        return Set.of();
-    }
-
-    @Override
-    public List<Car> values() {
-        return List.of();
-    }
-
-    @Override
-    public boolean remove(CarOwner key) {
-        return false;
-    }
-
-    @Override
-    public int size() {
-        return 0;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -80,9 +52,5 @@ public class CarOwner implements CarMap {
         return Objects.hash(id, name, lastName);
     }
 
-    @Override
-    public void clear() {
-
-    }
 }
 
